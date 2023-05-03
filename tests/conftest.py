@@ -31,6 +31,7 @@ def browser(config):
     elif config['browser'] == 'Headless Chrome':
         opts = selenium.webdriver.ChromeOptions()
         opts.add_argument('headless')
+        opts.add_argument('--log-level=1')
         b = selenium.webdriver.Chrome(options=opts)
     else:
         raise Exception(f'Browser "{config["browser"]}" is not supported')
